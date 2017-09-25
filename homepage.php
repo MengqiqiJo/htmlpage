@@ -43,7 +43,7 @@ class Page {
     );
     $eachDiv[] = array(
       'icons' => 'fa-question',
-      'quickLinksText' => '&nbsp;&nbsp;&nbsp;&nbsp;FAQ\'s',
+      'quickLinksText' => '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FAQ\'s',
     );
 
     return $eachDiv;

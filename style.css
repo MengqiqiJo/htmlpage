@@ -15,18 +15,25 @@
   margin: 15px;
   margin-left: 46px;
   padding-left: 32px;
+
 }
 .icondiv{
   -moz-border-radius: 50px;
    -webkit-border-radius: 50px;
  border-radius: 50px;
   background-color: #00ace6;
-  margin: 20px;
-  margin-left: 22px;
+  margin-top: 16px;
+  margin-left: 32px;
 
-  padding: 10px;
+  padding-top: 10px;
   width: 48px;
   height: 48px;
+
+  text-align:center;
+}
+p{
+  padding-top: 20px;
+  padding-left: 8px;
 }
 .lineSecond{
   margin-top: 48px;
@@ -36,6 +43,7 @@
 
 i {
   color: white;
+
 }
 .recentActivity{
   height: 300px;
