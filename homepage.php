@@ -60,8 +60,8 @@ class Page {
         foreach ($divData as $sub_value) {
           $text = $sub_value['quickLinksText'];
           $icon = $sub_value['icons'];
-          $output .= '<div class="eachElement col-sm-2">';
-            $output .= '<div class="icondiv">';
+          $output .= '<div class="eachElement col-sm-2 col-xs-12 col-md-2">';
+            $output .= '<div class="icondiv ">';
               $output .= '<i class="fa '. "$icon" . ' fa-2x" aria-hidden="true"></i>';
             $output .= '</div>';
             $output .= '<p>' . "$text" . '</p>';
@@ -75,9 +75,13 @@ class Page {
 
   public function floatDiv() {
     $output .= '<div class="row lineSecond col-sm-12">';
-      $output .= '<div class="recentActivity col-sm-5">';
+      $output .= '<div class="col-md-6 col-sm-12 col-xs-12">';
+        $output .= '<div class="recentActivity">';
+        $output .= '</div>';
       $output .= '</div>';
-      $output .= '<div class="updates col-sm-5">';
+      $output .= '<div class="col-md-6 col-sm-12 col-xs-12">';
+        $output .= '<div class="recentActivity">';
+        $output .= '</div>';
       $output .= '</div>';
       $output .= '</div>';
     $output .= '</div>';
