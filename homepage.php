@@ -43,34 +43,36 @@ class Page {
     );
     $eachDiv[] = array(
       'icons' => 'fa-question',
-      'quickLinksText' => '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FAQ\'s',
+      'quickLinksText' => 'FAQ\'s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;',
     );
 
     return $eachDiv;
   }
 
   public function homepage() {
-
     $output = '';
-
-    $divData = $this->getQuickLinkData();
-
     $output .= '<div class="container">';
       $output .= '<div class="quickLinks col-sm-12">';
-        foreach ($divData as $sub_value) {
-          $text = $sub_value['quickLinksText'];
-          $icon = $sub_value['icons'];
-          $output .= '<div class="eachElement col-sm-2 col-xs-12 col-md-2">';
-            $output .= '<div class="icondiv ">';
-              $output .= '<i class="fa '. "$icon" . ' fa-2x" aria-hidden="true"></i>';
-            $output .= '</div>';
-            $output .= '<p>' . "$text" . '</p>';
-          $output .= '</div>';
-        }
+       $output .= $this->quicklinks();
       $output .= '</div>';
       $output .= $this->floatDiv();
     $output .= '</div>';
-  return $output;
+    return $output;
+  }
+
+  public function quicklinks() {
+    $divData = $this->getQuickLinkData();
+      foreach ($divData as $sub_value) {
+        $text = $sub_value['quickLinksText'];
+        $icon = $sub_value['icons'];
+        $output .= '<div class="eachElement col-sm-2 col-xs-12 col-md-2">';
+          $output .= '<div class="icondiv ">';
+            $output .= '<i class="fa '. "$icon" . ' fa-2x icons" aria-hidden="true"></i>';
+          $output .= '</div>';
+          $output .= '<p class = "quickLinkText">' . "$text" . '</p>';
+        $output .= '</div>';
+      }
+      return $output;
   }
 
   public function floatDiv() {
