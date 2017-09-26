@@ -6,8 +6,8 @@ echo '<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.
 echo '<script src="https://use.fontawesome.com/e525368239.js"></script>';
 
 /**
-*
-*/
+ *
+ */
 class Page {
 
   public function getQuickLinkData() {
@@ -43,7 +43,7 @@ class Page {
     );
     $eachDiv[] = array(
       'icons' => 'fa-question',
-      'quickLinksText' => 'FAQ\'s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;',
+      'quickLinksText' => 'FAQ\'s',
     );
 
     return $eachDiv;
@@ -52,42 +52,50 @@ class Page {
   public function homepage() {
     $output = '';
     $output .= '<div class="container">';
-      $output .= '<div class="quickLinks col-sm-12">';
+      $output .= '<div class="quickLinks col-xs-12 col-sm-12 col-lg-12">';
        $output .= $this->quicklinks();
       $output .= '</div>';
       $output .= $this->floatDiv();
     $output .= '</div>';
+
     return $output;
   }
 
   public function quicklinks() {
     $divData = $this->getQuickLinkData();
-      foreach ($divData as $sub_value) {
-        $text = $sub_value['quickLinksText'];
-        $icon = $sub_value['icons'];
-        $output .= '<div class="eachElement col-sm-2 col-xs-12 col-md-2">';
-          $output .= '<div class="icondiv ">';
-            $output .= '<i class="fa '. "$icon" . ' fa-2x icons" aria-hidden="true"></i>';
+
+    foreach ($divData as $sub_value) {
+      $text = $sub_value['quickLinksText'];
+      $icon = $sub_value['icons'];
+      $output .= '<div class="eachElement col-xs-12 col-sm-12 col-md-3 col-lg-3">';
+        $output .= '<div class="text-center color-white">';
+          $output .= '<div class="icondiv">';
+            $output .= '<i class="fa '. "$icon" . ' fa-2x" aria-hidden="true"></i>';
           $output .= '</div>';
-          $output .= '<p class = "quickLinkText">' . "$text" . '</p>';
+          $output .= '<div class="quickLinkText color-000">';
+          $output .= "$text" ;
+          $output .= '</div>';
         $output .= '</div>';
-      }
-      return $output;
+      $output .= '</div>';
+    }
+
+    return $output;
   }
 
   public function floatDiv() {
-    $output .= '<div class="row lineSecond col-sm-12">';
+    $output .= '<div class="row lineSecond">';
       $output .= '<div class="col-md-6 col-sm-12 col-xs-12">';
-        $output .= '<div class="recentActivity">';
+        $output .= '<div class="recentActivity">11111';
         $output .= '</div>';
       $output .= '</div>';
       $output .= '<div class="col-md-6 col-sm-12 col-xs-12">';
-        $output .= '<div class="recentActivity">';
+        $output .= '<div class="recentActivity">2222';
         $output .= '</div>';
       $output .= '</div>';
       $output .= '</div>';
     $output .= '</div>';
-      return $output;
+
+    return $output;
   }
 
 }
